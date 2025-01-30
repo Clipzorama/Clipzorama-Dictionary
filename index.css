@@ -19,9 +19,11 @@
 
 body {
     background: linear-gradient(to right, var(--dark-purple), var(--darker-purple));
-    width: 100vw;
+    /* width: 100vw; */
     min-height: 100vh;
 }
+
+/* ----------------- Loader Div ----------------- */
 
 .content {
     display: flex;
@@ -67,9 +69,7 @@ body {
 
 }
 
-.hidden {
-    display: none;
-}
+
 
 /* FOR THE HONEYCOMB ANIMATION */
 @-webkit-keyframes honeycomb {
@@ -194,6 +194,97 @@ body {
     top: 0;
   }
 
+
+
+/* ----------------- Dictionary Div ----------------- */
+
+.dictionary-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 12rem auto 0;
+  border: 1px solid var(--tea-green);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  transition: 0.3s;
+}
+
+.search {
+  position: relative;
+  display: flex;
+
+}
+
+.search > input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1rem 3.5rem 2rem 0rem ;
+  color: var(--tea-green);
+  border-bottom: 1px solid var(--tea-green);
+}
+
+.search > input::placeholder {
+  color: var(--tea-green);
+}
+
+.search > button {
+  background-color: transparent;
+  border: 1px solid var(--tea-green);
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: 0.3s
+}
+
+.search > button:hover {
+  background-color: var(--tea-green);
+}
+
+.search > button:hover i {
+  color: black;
+}
+
+.search > button i {
+  color: var(--tea-green)
+}
+
+.info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.word > h1 {
+  font-weight: 600;
+  color: var(--tea-green);
+  font-size: 3rem;
+}
+
+.word > i {
+  color: var(--tea-green);
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--tea-green);
+  cursor: pointer;
+}
+
+
+
 /* -------------------------------------------------------------------------------------- */
 
 footer {
@@ -207,4 +298,17 @@ footer {
     font-size: 1.5rem;
     color: var(--tea-green);
     border-top: 1px solid var(--tea-green);
+}
+
+
+
+
+
+
+
+
+
+
+.hidden {
+  display: none;
 }

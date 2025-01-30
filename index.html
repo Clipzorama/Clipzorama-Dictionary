@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoria Dictionary</title>
+    <script src="https://kit.fontawesome.com/55433cb952.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js" defer></script>
 </head>
 <body>
-    <div class="content">
+    <section class="content hidden">
         <h1>Zoria Glossary</h2>
         <p>Explore the complete glossary of Zoria, where every term is defined with clarity and detail. Discover the meanings behind key words and concepts, all in one place.</p>
         <button id="continue">Start Now</button>
@@ -21,9 +22,31 @@
             <div></div>
             <div></div>
           </div>
-    </div>
+    </section>
+    <section class="dictionary-content"> <!-- tag -->
+        <div class="search"> <!-- tag -->
+            <input type="text" placeholder="Enter a Word" spellcheck="false"> <!-- tag -->
+            <button><i class="fa-solid fa-magnifying-glass"></i></button> <!-- tag -->
+        </div>
+        <div class="info ">
+            <div class="word">
+                <h1>illiterate</h1> <!-- tag -->
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+            <h3 class="phonetic">[ ih-lit-er-it ]</h3> <!-- tag -->
+            <h3 class="pos-tag">adjective</h3> <!-- tag -->
+            <div class="definition">
+                <span class="meaning">Definition: </span>
+                <p>unable to read and write</p> <!-- tag -->
+            </div>
+            <p class="example">an illiterate group.</p> <!-- tag -->
+              
+
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; Code Traversal 2024-2025</p>
+        <p>&copy; Code Traversal 2024-2025</p> 
     </footer>
 
     
