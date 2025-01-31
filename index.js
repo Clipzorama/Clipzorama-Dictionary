@@ -5,13 +5,19 @@ const startBtn = document.getElementById("continue");
 const loader = document.querySelector(".honeycomb");
 
 
-// Dictionary Content
+// Dictionary Content Selector References
 
 let dictionaryDiv = document.querySelector(".dictionary-content");
 let searchDiv = document.querySelector(".search");
 let wordInput = document.getElementById("theWord")
 let searchBtn = document.getElementById("word-search")
 
+// Word Info Selector References
+
+let infoDiv = document.querySelector(".info");
+let wordTitle = document.querySelector(".word > h1");
+
+let phonetic = document.querySelector(".phonetic");
 
 startBtn.addEventListener("click", () => {
     loader.classList.remove("hidden");
