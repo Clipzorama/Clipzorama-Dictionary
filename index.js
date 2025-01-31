@@ -12,12 +12,21 @@ let searchDiv = document.querySelector(".search");
 let wordInput = document.getElementById("theWord")
 let searchBtn = document.getElementById("word-search")
 
-// Word Info Selector References
+// Word Selector References
 
 let infoDiv = document.querySelector(".info");
 let wordTitle = document.querySelector(".word > h1");
 
+// Info Selector References
+
 let phonetic = document.querySelector(".phonetic");
+let partOS = document.querySelector("pos-tag1");
+
+let firstMeaningList = document.querySelector("meaningt1");
+
+
+
+
 
 startBtn.addEventListener("click", () => {
     loader.classList.remove("hidden");
@@ -25,6 +34,7 @@ startBtn.addEventListener("click", () => {
     setTimeout(() => {
     loader.classList.add("hidden");
     startDiv.classList.add("hidden");
+    dictionaryDiv.classList.remove("hidden");
     }, 3000)
 })
 
