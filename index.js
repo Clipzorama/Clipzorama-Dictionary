@@ -28,6 +28,10 @@ let partOS2 = document.querySelector(".pos-tag2");
 let defTag2 = document.querySelector(".def2");
 let secondMeaningList = document.querySelector(".meaningt2");
 
+
+
+// Start Button Transition
+
 startBtn.addEventListener("click", () => {
     loader.classList.remove("hidden");
 
@@ -39,6 +43,57 @@ startBtn.addEventListener("click", () => {
 })
 
 
+
+function modify(info) {
+    firstMeaningList.innerHTML = "";
+    secondMeaningList.innerHTML = "";
+
+    // Dom Manipulation
+
+    infoDiv.classList.remove("hidden");
+    wordTitle.textContent = info[0].word.charAt(0).toUpperCase() + info[0].word.slice(1);
+    phonetic.textContent = info[0].phonetic;
+
+
+    if (info[0].meanings.length === 1) {
+        partOS.textContent = info[0].meanings[0].partOfSpeech;
+        partOS2.classList.add("hidden");
+        defTag2.classList.add("hidden");
+        secondMeaningList.classList.add("hidden");
+        info[0].meanings[0].definitions.slice(0, 2).forEach((element) => {
+            const lister = document.createElement("li");
+            lister.textContent = String(element.definition)
+            firstMeaningList.appendChild(lister);
+        });
+        console.log(firstMeaningList); 
+
+
+
+    } else if (info[0].meanings.length >= 2) {
+        partOS.textContent = info[0].meanings[0].partOfSpeech;
+        partOS2.textContent = info[0].meanings[1].partOfSpeech;
+
+        info[0].meanings[0].definitions.slice(0, 1).forEach((element) => {
+            const lister = document.createElement("li");
+            lister.textContent = String(element.definition)
+            firstMeaningList.appendChild(lister);
+        });
+        console.log(firstMeaningList); 
+        secondMeaningList.classList.remove("hidden");
+        partOS2.classList.remove("hidden");
+        defTag2.classList.remove("hidden");
+        info[0].meanings[1].definitions.slice(0, 1).forEach((element) => {
+            const lister = document.createElement("li");
+            lister.textContent = String(element.definition)
+            secondMeaningList.appendChild(lister);
+        });
+        console.log(secondMeaningList); 
+
+    }
+}
+
+
+
 // what we have for the API for now
 async function checkWord(word) {
     let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -48,54 +103,10 @@ async function checkWord(word) {
         console.log(`Status Success: ${response.status} !`)
         let data = await response.json();
         console.log(data);
-
-        // Dom Manipulation
-        infoDiv.classList.remove("hidden");
-        wordTitle.textContent = data[0].word.charAt(0).toUpperCase() + data[0].word.slice(1);
-        phonetic.textContent = data[0].phonetic;
-
-
-        if (data[0].meanings.length === 1) {
-            partOS.textContent = data[0].meanings[0].partOfSpeech;
-            partOS2.classList.add("hidden");
-            defTag2.classList.add("hidden");
-            secondMeaningList.classList.add("hidden");
-
-
-
-            data[0].meanings[0].definitions.slice(0, 2).forEach((element) => {
-                const lister = document.createElement("li");
-                lister.textContent = String(element.definition)
-                firstMeaningList.appendChild(lister);
-            });
-            console.log(firstMeaningList); 
-
-
-
-        } else if (data[0].meanings.length >= 2) {
-            partOS.textContent = data[0].meanings[0].partOfSpeech;
-            partOS2.textContent = data[0].meanings[1].partOfSpeech;
-
-            data[0].meanings[0].definitions.slice(0, 1).forEach((element) => {
-                const lister = document.createElement("li");
-                lister.textContent = String(element.definition)
-                firstMeaningList.appendChild(lister);
-            });
-            console.log(firstMeaningList); 
-
-
-            data[0].meanings[1].definitions.slice(0, 1).forEach((element) => {
-                const lister = document.createElement("li");
-                lister.textContent = String(element.definition)
-                secondMeaningList.appendChild(lister);
-            });
-            console.log(secondMeaningList); 
-
-        }
-        
-
+        modify(data)
     }
 }
+
 
 searchBtn.addEventListener("click", () => {
     checkWord(wordInput.value);
