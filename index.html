@@ -9,7 +9,7 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
-    <section class="content hidden">
+    <section class="content">
         <h1>Zoria Glossary</h2>
         <p>Explore the complete glossary of Zoria, where every term is defined with clarity and detail. Discover the meanings behind key words and concepts, all in one place.</p>
         <button id="continue">Start Now</button>
@@ -23,7 +23,7 @@
             <div></div>
           </div>
     </section>
-    <section class="dictionary-content"> <!-- tag -->
+    <section class="dictionary-content hidden "> <!-- tag -->
         <div class="search"> <!-- tag -->
             <input id="theWord" type="text" placeholder="Enter a Word" spellcheck="false"> <!-- tag -->
             <button id="word-search"><i class="fa-solid fa-magnifying-glass"></i></button> <!-- tag -->
@@ -45,6 +45,10 @@
             </ul>     
         </div>
     </section>
+    <div class="restart-div hidden">
+        <button class="restart">Main Page</button>
+    </div>
+
 
     <footer>
         <p>&copy; Code Traversal 2024-2025</p> 
