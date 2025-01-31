@@ -5,6 +5,14 @@ const startBtn = document.getElementById("continue");
 const loader = document.querySelector(".honeycomb");
 
 
+// Dictionary Content
+
+let dictionaryDiv = document.querySelector(".dictionary-content");
+let searchDiv = document.querySelector(".search");
+let wordInput = document.getElementById("theWord")
+let searchBtn = document.getElementById("word-search")
+
+
 startBtn.addEventListener("click", () => {
     loader.classList.remove("hidden");
 
@@ -24,6 +32,11 @@ async function checkWord(word) {
         console.log(`Status Success: ${response.status} !`)
         let data = await response.json();
         console.log(data);
+        console.log(data?.[0]?.meanings[0]?.partOfSpeech);
+
     }
 }
+
+
+checkWord("illiterate");
 
