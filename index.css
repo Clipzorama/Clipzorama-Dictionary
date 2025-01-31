@@ -304,6 +304,12 @@ body {
   
 }
 
+.def2 {
+  margin-top: 1rem;
+  color: hsl(89, 68%, 87%, 0.7);
+  
+}
+
 .meaningt1 {
   color: var(--tea-green);
   padding: 1rem 1rem 0 2rem;
