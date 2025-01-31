@@ -50,6 +50,7 @@ async function checkWord(word) {
         console.log(data);
 
         // Dom Manipulation
+        infoDiv.classList.remove("hidden");
         wordTitle.textContent = data[0].word.charAt(0).toUpperCase() + data[0].word.slice(1);
         phonetic.textContent = data[0].phonetic;
 
@@ -60,9 +61,35 @@ async function checkWord(word) {
             defTag2.classList.add("hidden");
             secondMeaningList.classList.add("hidden");
 
+
+
+            data[0].meanings[0].definitions.slice(0, 2).forEach((element) => {
+                const lister = document.createElement("li");
+                lister.textContent = String(element.definition)
+                firstMeaningList.appendChild(lister);
+            });
+            console.log(firstMeaningList); 
+
+
+
         } else if (data[0].meanings.length >= 2) {
             partOS.textContent = data[0].meanings[0].partOfSpeech;
             partOS2.textContent = data[0].meanings[1].partOfSpeech;
+
+            data[0].meanings[0].definitions.slice(0, 1).forEach((element) => {
+                const lister = document.createElement("li");
+                lister.textContent = String(element.definition)
+                firstMeaningList.appendChild(lister);
+            });
+            console.log(firstMeaningList); 
+
+
+            data[0].meanings[1].definitions.slice(0, 1).forEach((element) => {
+                const lister = document.createElement("li");
+                lister.textContent = String(element.definition)
+                secondMeaningList.appendChild(lister);
+            });
+            console.log(secondMeaningList); 
 
         }
         
