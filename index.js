@@ -20,13 +20,13 @@ let wordTitle = document.querySelector(".word > h1");
 // Info Selector References
 
 let phonetic = document.querySelector(".phonetic");
-let partOS = document.querySelector("pos-tag1");
+let partOS = document.querySelector(".pos-tag1");
 
-let firstMeaningList = document.querySelector("meaningt1");
+let firstMeaningList = document.querySelector(".meaningt1");
 
-
-
-
+let partOS2 = document.querySelector(".pos-tag2");
+let defTag2 = document.querySelector(".def2");
+let secondMeaningList = document.querySelector(".meaningt2");
 
 startBtn.addEventListener("click", () => {
     loader.classList.remove("hidden");
@@ -48,11 +48,29 @@ async function checkWord(word) {
         console.log(`Status Success: ${response.status} !`)
         let data = await response.json();
         console.log(data);
-        console.log(data?.[0]?.meanings[0]?.partOfSpeech);
+
+        // Dom Manipulation
+        wordTitle.textContent = data[0].word.charAt(0).toUpperCase() + data[0].word.slice(1);
+        phonetic.textContent = data[0].phonetic;
+
+
+        if (data[0].meanings.length === 1) {
+            partOS.textContent = data[0].meanings[0].partOfSpeech;
+            partOS2.classList.add("hidden");
+            defTag2.classList.add("hidden");
+            secondMeaningList.classList.add("hidden");
+
+        } else if (data[0].meanings.length >= 2) {
+            partOS.textContent = data[0].meanings[0].partOfSpeech;
+            partOS2.textContent = data[0].meanings[1].partOfSpeech;
+
+        }
+        
 
     }
 }
 
-
-checkWord("illiterate");
+searchBtn.addEventListener("click", () => {
+    checkWord(wordInput.value);
+})
 
