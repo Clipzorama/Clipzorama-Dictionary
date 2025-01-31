@@ -28,6 +28,11 @@ let partOS2 = document.querySelector(".pos-tag2");
 let defTag2 = document.querySelector(".def2");
 let secondMeaningList = document.querySelector(".meaningt2");
 
+// restart button
+
+let restartDiv = document.querySelector(".restart-div");
+let restartBtn = document.querySelector(".restart");
+
 
 
 // Start Button Transition
@@ -39,6 +44,7 @@ startBtn.addEventListener("click", () => {
     loader.classList.add("hidden");
     startDiv.classList.add("hidden");
     dictionaryDiv.classList.remove("hidden");
+    restartDiv.classList.remove("hidden");
     }, 3000)
 })
 
@@ -92,8 +98,6 @@ function modify(info) {
     }
 }
 
-
-
 // what we have for the API for now
 async function checkWord(word) {
     let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -112,3 +116,9 @@ searchBtn.addEventListener("click", () => {
     checkWord(wordInput.value);
 })
 
+restartDiv.addEventListener("click", () => {
+    loader.classList.add("hidden");
+    startDiv.classList.remove("hidden");
+    dictionaryDiv.classList.add("hidden");
+    restartDiv.classList.add("hidden");
+})
