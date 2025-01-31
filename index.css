@@ -66,7 +66,13 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
 
+.content > button:hover {
+  background-color: hsl(332, 97%, 43%, 0.5);
+  border: 1px solid white;
+  color: white;
 }
 
 
@@ -272,6 +278,7 @@ body {
   font-weight: 600;
   color: var(--tea-green);
   font-size: 3rem;
+  transition: 0.3s;
 }
 
 .word > i {
@@ -329,6 +336,28 @@ body {
   font-weight: 300;
 }
 
+.restart-div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.restart {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--rose);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.restart:hover {
+  background-color: hsl(332, 97%, 43%, 0.5);
+  border: 1px solid white;
+  color: white;
+}
 
 
 
