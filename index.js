@@ -45,6 +45,8 @@ startBtn.addEventListener("click", () => {
     startDiv.classList.add("hidden");
     dictionaryDiv.classList.remove("hidden");
     restartDiv.classList.remove("hidden");
+    infoDiv.classList.add("hidden");
+    wordInput.value = "";
     }, 3000)
 })
 

@@ -20,7 +20,7 @@
 body {
     background: linear-gradient(to right, var(--dark-purple), var(--darker-purple));
     /* width: 100vw; */
-    min-height: 100vh;
+    max-height: 100vh;
 }
 
 /* ----------------- Loader Div ----------------- */
@@ -378,12 +378,25 @@ footer {
 
 
 
+@media screen and (max-width: 430px) {
+  .content > h1 {
+    font-size: 2rem;
+  }
 
+  .dictionary-content {
+    margin: 3rem auto 0;
+  }
+}
 
+@media screen and (min-width:1024px)  {
+  .content {
+    width: 50%;
+  }
 
-
-
-
+  .dictionary-content {
+    width: 50%;
+  }
+}
 
 .hidden {
   display: none;
