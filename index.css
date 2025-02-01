@@ -67,6 +67,7 @@ body {
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    color: black;
 }
 
 .content > button:hover {
@@ -351,6 +352,7 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  color: black;
 }
 
 .restart:hover {
