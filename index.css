@@ -19,8 +19,7 @@
 
 body {
     background: linear-gradient(to right, var(--dark-purple), var(--darker-purple));
-    /* width: 100vw; */
-    max-height: 100vh;
+    min-height: 100vh;
 }
 
 /* ----------------- Loader Div ----------------- */
